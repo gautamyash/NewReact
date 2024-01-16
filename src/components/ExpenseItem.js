@@ -1,14 +1,15 @@
-function ExpenseItem() {
-  return (
-    <div>
-      <h1>Expense Item Component</h1>
-      <h3>Food Rs 10</h3>
+import "./ExpenseItem.css";
 
-      <h3>Petrol Rs 100</h3>
+function ExpenseItem(props) { 
+    return (
+      <div>
+        <div className="expense-item">Date: {props.date.toLocaleDateString()}</div>
+        <div className="expense-item__description">Item: {props.title}</div>
+        <div className="expense-item__location">Location: {props.location}</div>
+        <div className="expense-item__price">Amount: {props.amount}</div>
+        </div>
+    );
+  }
+  
+ export default ExpenseItem;
 
-      <h3>Movies Rs 200</h3>
-    </div>
-  );
-}
-
-export default ExpenseItem;
