@@ -1,5 +1,5 @@
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
 function App() {
   const entries = [
@@ -32,15 +32,7 @@ function App() {
   return (
     <div>
       <h2>Expense Tracker App</h2>
-      {entries.map((entry, index) => (
-        <ExpenseItem
-          key={index}
-          title={entry.title}
-          amount={entry.amount}
-          date={entry.date}
-          location={entry.location}
-        />
-      ))}
+      <Expenses entries={entries} />
     </div>
   );
 }
