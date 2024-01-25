@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  const handletextChange = (event) => console.log(event.target.value);
-  const handleamountChange = (event) => console.log(event.target.value);
-  const handledateChange = (event) => console.log(event.target.value);
+  const [title, setTitle] = useState(" ");
+  const [amount, setAmount] = useState(" ");
+  const [date, setDate] = useState(" ");
+
+  const handletextChange = (event) => setTitle(event.target.value);
+  const handleamountChange = (event) => setAmount(event.target.value);
+  const handledateChange = (event) => setDate(event.target.value);
   return (
     <div>
       <form>
