@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/AddExpense/NewExpense";
@@ -28,12 +30,18 @@ function App() {
       location: "Bangalore",
     },
   ];
+  const [expenses, setExpenses] = useState(entries);
+
+  const onListItem = (expense) => {
+    // Update the expenses list with the new expense
+    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
+  };
 
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Expense Tracker App</h2>
-      <NewExpense />
-      <Expenses entries={entries} />
+      <NewExpense onSavedListItem={onListItem} />
+      <Expenses entries={expenses} />
     </div>
   );
 }
