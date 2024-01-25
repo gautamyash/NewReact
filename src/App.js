@@ -1,6 +1,6 @@
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
-
+import NewExpense from "./components/AddExpense/NewExpense";
 function App() {
   const entries = [
     {
@@ -32,6 +32,7 @@ function App() {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Expense Tracker App</h2>
+      <NewExpense />
       <Expenses entries={entries} />
     </div>
   );
