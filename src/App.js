@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/AddExpense/NewExpense";
+
 function App() {
-  const entries = [
+  const initialExpenses = [
     {
       title: "Food",
       amount: 100,
@@ -30,9 +30,10 @@ function App() {
       location: "Bangalore",
     },
   ];
-  const [expenses, setExpenses] = useState(entries);
 
-  const onListItem = (expense) => {
+  const [expenses, setExpenses] = useState(initialExpenses);
+
+  const addExpenseHandler = (expense) => {
     // Update the expenses list with the new expense
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
@@ -40,8 +41,8 @@ function App() {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Expense Tracker App</h2>
-      <NewExpense onSavedListItem={onListItem} />
-      <Expenses entries={expenses} />
+      <NewExpense onSavedListItem={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
