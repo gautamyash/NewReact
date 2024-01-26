@@ -20,13 +20,13 @@ function App() {
     {
       title: "Electronics",
       amount: 500,
-      date: new Date("2019-03-16"),
+      date: new Date("2020-03-16"),
       location: "Delhi",
     },
     {
       title: "Gym",
       amount: 50,
-      date: new Date("2019-07-16"),
+      date: new Date("2020-07-16"),
       location: "Bangalore",
     },
   ];
