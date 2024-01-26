@@ -8,25 +8,25 @@ function App() {
     {
       title: "Food",
       amount: 100,
-      date: new Date("2024-01-16"),
+      date: new Date("2020-01-16"),
       location: "Pune",
     },
     {
       title: "Apparels",
       amount: 60,
-      date: new Date("2024-05-16"),
+      date: new Date("2020-05-16"),
       location: "Mumbai",
     },
     {
       title: "Electronics",
       amount: 500,
-      date: new Date("2024-03-16"),
+      date: new Date("2019-03-16"),
       location: "Delhi",
     },
     {
       title: "Gym",
       amount: 50,
-      date: new Date("2024-07-16"),
+      date: new Date("2019-07-16"),
       location: "Bangalore",
     },
   ];
@@ -34,7 +34,6 @@ function App() {
   const [expenses, setExpenses] = useState(initialExpenses);
 
   const addExpenseHandler = (expense) => {
-    // Update the expenses list with the new expense
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
